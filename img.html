@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Image Swapper</title>
+        
+		<style>
+		
+      .parent {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .image1 {
+        position: relative;
+        top: 10;
+        left: 10;
+        border: 1px solid #000000;
+      }
+      .image2 {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        border: 1px solid #000000;
+      }
+	   .image3 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        border: 1px solid #000000;
+      }
+	   .image4 {
+        position: absolute;
+        top: 70px;
+        left: 70px;
+        border: 1px solid #000000;
+      }
+	   .image5 {
+        position: absolute;
+        top: 90px;
+        left: 90px;
+        border: 1px solid #000000;
+      }
+		</style>
+		<script>
+            var counter=1;
+            function swapImage()
+            {
+              document.getElementById("pic1").disabled=false;
+			
+            }
+        </script>
+    </head>
+    <body>
+	     <div class="parent">
+        <img class="image1" src="c1.png" id="pic1" onclick=" swapImage()"/>
+		 <img class="image2" src="c2.png" id="pic2" onclick="  swapImage()"/>
+		  <img class="image3" src="c3.png" id="pic3" onclick=" swapImage()"/>
+		   <img class="image4" src="c4.png" id="pic4" onclick="swapImage()"/>
+		    <img class="image5" src="c5.png" id="pic" onclick="swapImage()"/>
+			</div>
+    </body>
+</html>
