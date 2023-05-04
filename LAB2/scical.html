@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Scientific calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+        
+        <h1 textstyle:red>SCIENTIFIC CALCULATOR</h1>
+        <div id="div1">
+            <div id="div2">
+            
+            <input  type=text  id="input"">
+        </div>
+            
+            <table >
+                
+                <td><tr></tr></td>
+                
+                <tr><td><button id="b7" onclick="solve(document.getElementById('b7').value)" value="7">7</button></td>
+                <td><button id="b8" onclick="solve(document.getElementById('b8').value)" value="8" >8</button></td>
+                <td><button id="b9" onclick="solve(document.getElementById('b9').value)" value="9">9</button></td>
+                <td><button id="b+" onclick="solve(document.getElementById('b+').value)" value="+">+</button></td>
+                <td><button id="bsin" onclick="answer(document.getElementById('bsin').value)" value="sin">sin</button></td>
+                
+                
+            </tr> 
+        </tr></td>
+        <tr><td><button ="num" id='b4' onclick="solve(document.getElementById('b4').value)" value="4">4</button></td>
+        <td><button id="b5" onclick="solve(document.getElementById('b5').value)" value="5" >5</button></td>
+        <td><button id="b6" onclick="solve(document.getElementById('b6').value)" value="6">6</button></td>
+        <td><button id="b-" onclick="solve(document.getElementById('b-').value)" value="-">-</button></td>
+        <td><button id="bcos" onclick="answer(document.getElementById('bcos').value)" value="cos">cos</button></td>
+                
+    </tr> 
+    </tr></td>
+    <tr><td><button id="b1" onclick="solve(document.getElementById('b1').value)" value="1">1</button></td>
+    <td><button id="b2" onclick="solve(document.getElementById('b2').value)" value="2" >2</button></td>
+    <td><button id="b3" onclick="solve(document.getElementById('b3').value)" value="3">3</button></td>
+    <td><button id="b*" onclick="solve(document.getElementById('b*').value)"  value=""></button></td>
+    <td><button id="btan" onclick="answer(document.getElementById('btan').value)" value="tan">tan</button></td>
+                
+    </tr> 
+    </tr></td>
+    <tr><td><button id="b0" onclick="solve(document.getElementById('b0').value)" value="0">0</button></td>
+    <td><button id="b." onclick="solve(document.getElementById('b.').value)" value="." >.</button></td>
+    <td><button id="b=" onclick="answer(document.getElementById('b=').value)" value="=">=</button></td>
+    <td><button id="b/" onclick="solve(document.getElementById('b/').value)" value="/">/</button></td>
+    <td><button id="blog" onclick="answer(document.getElementById('blog').value)" value="log">log</button></td>
+                
+    </tr> 
+            </table>
+        </div>
+    </center>
+    <script>
+    
+        function solve(a)
+        {   
+            var inp=document.getElementById("input");
+            console.log(a)
+            inp.value+=a;
+        }
+        function answer(a)
+        {
+            var inp=document.getElementById("input");
+            
+            if(a=="sin")
+            {
+                inp.value=Math.sin(inp.value);
+            }
+            if(a=="cos")
+            {
+                
+                inp.value=Math.cos(inp.value);
+            }
+            if(a=="tan")
+            {
+                inp.value=Math.tan(inp.value);
+            }
+            if(a=="log")
+            {
+                inp.value=Math.log(inp.value);
+            }
+           
+            inp.value=eval(inp.value);
+        }
+
+    </script>
+</body>

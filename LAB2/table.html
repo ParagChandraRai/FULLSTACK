@@ -1,0 +1,106 @@
+<html>
+     <head>
+	      <title>table </title>
+		
+   <script>
+    function cal()
+	{
+	  var units = document.getElementById("consumed_units").value;
+			var subsidy = 250;
+			var fixed_cost = 50;
+			var current_charges = 0;
+
+			if (units <= 100) {
+				current_charges = 0;
+			} else if (units <= 200) {
+				current_charges = (units - 100) * 3.75 + 100;
+			} else if (units <= 400) {
+				current_charges = (units - 200) * 4 + 250;
+			} else if (units <= 600) {
+				current_charges = (units - 400) * 4.25 + 300;
+			} else {
+				current_charges = (units - 600) * 5 + 400;
+			}
+
+			var total_charges = current_charges + fixed_cost;
+			var new_subsidy = subsidy - fixed_cost;
+
+	       document.getElementById("1").innerHTML = units;
+		   document.getElementById("2").innerHTML = total_charges;
+		   document.getElementById("3").innerHTML = current_charges;
+		   document.getElementById("4").innerHTML = fixed_cost ;
+		   document.getElementById("5").innerHTML = 0.00;
+		   document.getElementById("6").innerHTML = new_subsidy;
+		   document.getElementById("7").innerHTML = (total_charges - new_subsidy);
+	}
+   </script>
+	<style>
+		  td {
+			  border: 1px solid black;
+			  width: 170px;
+			  height: 20px;
+			  color: blue;
+			  
+            }
+	    .small {
+			width: 50px;
+			color:red;
+		}
+		table{
+		margin-left: auto;  
+		margin-right: auto;
+		}
+		.container {
+			border-radius: 5px;
+			background-color: red;
+			padding: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		
+</style>
+	 </head>
+	 <body>
+	   <div class="container">
+		<h2>Electricity Bill Calculator</h2>
+	
+			<label for="consumed_units">Consumed Units:</label>
+			<input type="number" id="consumed_units" name="consumed_units" placeholder="Enter units consumed" required><br><br>
+			<input type="submit" onclick="cal()" value="Calculate">
+	
+		<br>
+	</div>
+	      <table  border="1">
+		        <tr>
+				    <td>Consumed Units</td>
+			        <td id="1" class="small">   </td>
+		        </tr>
+				<tr>
+				    <td>Total Current Charges Rs</td>
+			        <td id="2" class="small">   </td>
+		        </tr>
+				<tr>
+				    <td>Current Charges Rs. </td>
+			        <td id="3" class="small">   </td>
+		        </tr>
+				<tr>
+				    <td>Fixed Cost Rs.(+)</td>
+			        <td id="4" class="small">   </td>
+		        </tr>
+				<tr>
+				    <td>Subsidy Fixed Cost Rs.(-)</td>
+			        <td id="5" class="small"></td>
+		        </tr>
+				<tr>
+				    <td>New Subsidy Rs.(-)</td>
+			        <td id="6" class="small">   </td>
+		        </tr>
+				<tr>
+				    <td>Net Amount Rs.</td>
+			        <td id="7" class="small">   </td>
+		        </tr>
+				
+		  </table>
+	 </body>
+	 
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Pizz Store </title>
+        <style>
+            .container {
+	       margin: auto;
+		   background-color: rgb(30, 255, 0);
+		   border-style: ridge ;
+             border-color: rgb(25, 215, 60);
+			border-radius: 25px;
+			width:30%;
+			padding: 100px;
+		}
+        </style>
+        <script>
+            function cal()
+            {
+                var total=0;
+                var r=document.getElementsByName("size");
+                var r1=document.getElementsByName("with");
+                if(r[0].checked)
+                   total+=99;
+                if(r[1].checked)
+                   total+=199;
+                if(r[2].checked)
+                   total+=299;
+                if(ch.checked==true)
+                    total+=20;
+                if(r1[0].checked)
+                   total+=15;
+                if(r1[1].checked)
+                   total+=10;
+                if(r1[2].checked)
+                   total+=30;
+                if(r1[3].checked)
+                   total+=20;
+                if(ch1.checked==true)
+                    total+=25;
+                
+                document.getElementById("ans").value=total;
+                
+                
+                
+            }
+        </script>
+    </head>
+    
+    <body>
+      <div class="container">
+        <h2> PIZZ STORE</h2>
+       <input type="radio" id="small"  name="size" > Small ₹99<br>
+       <input type="radio" id="medium"  name="size"  > Medium  ₹199<br>
+       <input type="radio" id="large"  name="size" > large ₹ 299<br><br>
+       <input type="checkbox" id="ch" > <b>For  deep pan ₹20<b><br><br
+       <label><b></b>Extra toppings:</label><br><br>
+       <input type="radio" id="small"  name="with" > mushrooms ₹15<br>
+       <input type="radio" id="small"  name="with" > olives ₹10
+       <br>
+       <input type="radio" id="small"  name="with" > fingernail ₹30<br>
+       <input type="radio" id="small"  name="with" > spicy beef ₹20
+       <br><br>
+       <b></b><input type="checkbox" id="ch1" > <b>For home delivery ₹25<b></b><br><br>
+       <input type="button" onclick="cal()" value="ORDER NOW"><br><br>
+       <label><b>Total Bill</label>
+        <input id="ans">
+      </div>
+    </body>
+</html> 

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Online Store</title>
+        <script>
+            function p(){
+            var lines=document.getElementById("city").value;
+            
+             let form ="";
+            for (let i = 1; i <= lines; i++) 
+            {
+            form += `Item ${i}: ______________\n`;
+            }
+             const formContainer = document.getElementById("formContainer");
+             formContainer.innerText = form;
+            }
+             
+        </script>
+    </head>
+    <body>
+        <label>select a city</label>
+        <select id="city">
+            <option value="15">Chennai</option>
+            <option value="12">coimbatore and Madurai</option>
+            <option value="8">Salem</option>
+            <option value="6">Triuchirpplli</option>
+            <option value="2">thoothukudi</option>
+        </select><br><br>
+        <button id="sub" onclick="p()">click</button><br>
+        <div id="formContainer"></div><br>
+        <button onclick="window.print()">Print</button>
+    </body>
+</html>

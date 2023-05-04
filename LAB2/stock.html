@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Stock </title>
+    <script>
+         var t=25;
+      function cal()
+      {
+       
+        const table = document.getElementById("myTable");
+        const rows = table.getElementsByTagName("tr");
+        var val=document.getElementById("ans").value;
+        
+         const cells = rows[val-1].getElementsByTagName("td");
+         const itemQuantity = parseInt(cells[2].innerHTML);
+         if(itemQuantity>0)
+          {
+             document.getElementById("total").innerHTML=t-1;
+             t=t-1;
+             cells[2].innerHTML=itemQuantity-1;
+            alert("sale successful");
+          }
+            else
+              alert("out of stock");
+        
+
+        
+      }
+    </script>
+ </head>
+   <body>
+       <table border="1" id="myTable">
+        <tr>
+            <td>1</td>
+            <td>Four-Line notebook</td>
+            <td id="1" > 2</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Two-Line notebook</td>
+            <td id="2">10</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>HB pencil</td>
+            <td id="3"> 8</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Eraser</td>
+            <td id="4">3</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Drawing  notebook</td>
+            <td id="5"> 2</td>
+        </tr>
+    </table><br>
+    Total Stock: <span id="total"> 25</span><br><br>
+     <label >Sale By Id</label>
+    <input id="ans"><br><br>
+    <input type="button" onclick="cal()"value="click">
+   </body>
+</html>

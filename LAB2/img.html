@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Image Swapper</title>
+        <script>
+            var counter=1;
+            function swapImage()
+            {
+
+                if (counter == 1){
+                document.getElementById("pic").src = "c2.png";
+                 counter++;
+                }
+                else if (counter == 2){
+                  document.getElementById("pic").src = "c3.png";
+                  counter++;
+                }
+                else if (counter == 3){
+                    document.getElementById("pic").src = "c4.png";
+                    counter++;
+                }
+                else if (counter == 4){
+                    document.getElementById("pic").src = "c5.png";
+                    counter++;
+                }
+                else if (counter == 5){
+                    document.getElementById("pic").src = "c1.png";
+                    counter=1;
+                
+                }
+                    
+
+            }
+        </script>
+    </head>
+    <body>
+        <img src="c1.png" id="pic" onclick="swapImage()"/>
+    </body>
+</html>
