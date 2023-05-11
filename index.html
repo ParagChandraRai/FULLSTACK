@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Creating Dynamic Element</title>
+    
+    </head>
+    <body>
+	<div id="container">
+        <p id="p1">This is paragraph1</p>
+        <p id="p2">This is paragraph2</p>
+        <p id="p3">This is paragraph3</p>
+        <p id="p4">This is paragraph4</p>
+		<button onclick="myFunction()">Try it</button>
+		<button onclick="myFun()">Try it</button>
+    </div>
+        <script>
+		
+          function myFunction() {
+		  var nodeList = document.querySelectorAll("p");
+         for(var i=0;i<nodeList.length;i++)
+		 {
+		   if(i%2==0)
+		   nodeList[i].style.backgroundColor = "red"; 
+		   else
+		    nodeList[i].style.backgroundColor = "green"; 
+         }		 
+        
+         }
+		  function myFun() {
+		  var nodeList = document.querySelectorAll("p");
+
+         for(var i=0;i<nodeList.length;i++)
+		 {
+		   
+		   nodeList[i].style.backgroundColor = "red"; 
+		   nodeList[i].style.border = "10px solid blue";
+		  nodeList[i].style.fontSize ="x-large";
+		  nodeList[i].style.font-family = "sans-serif";
+
+         }		 
+        
+         }
+		</script>
+    </body>
+</html>
