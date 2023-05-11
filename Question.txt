@@ -1,0 +1,153 @@
+ArrayList 
+1.Enhanced for Statement
+2.Difference between Array and ArrayList
+3. Variable-Length Argument Lists
+4.Multidimensional arrays
+
+
+
+// a) Declare a constant ARRAY_SIZE that’s initialized to 10.
+final int ARRAY_SIZE = 10;
+
+// b) Declare an array with ARRAY_SIZE elements of type double, and initialize the elements to 0.
+double[] fractions = new double[ARRAY_SIZE];
+Arrays.fill(fractions, 0.0);
+
+// c) Refer to array element 4.
+double element_4 = fractions[4];
+
+// d) Assign the value 1.667 to array element 9.
+fractions[9] = 1.667;
+
+// e) Assign the value 3.333 to array element 6.
+fractions[6] = 3.333;
+
+// f) Sum all the elements of the array, using a for statement. Declare the integer variable x as a control variable for the loop.
+double sum = 0.0;
+for (int x = 0; x < ARRAY_SIZE; x++) {
+    sum += fractions[x];
+}
+
+// a) Declare and create the array as an integer array that has three rows and three columns. Assume that the constant ARRAY_SIZE has been declared to be 3.
+final int ARRAY_SIZE = 3;
+int[][] table = new int[ARRAY_SIZE][ARRAY_SIZE];
+
+// b) How many elements does the array contain?
+// The array contains 9 elements, since it has 3 rows and 3 columns.
+
+// c) Use a for statement to initialize each element of the array to the sum of its indices. Assume that the integer variables x and y are declared as control variables.
+for (int x = 0; x < ARRAY_SIZE; x++) {
+    for (int y = 0; y < ARRAY_SIZE; y++) {
+        table[x][y] = x + y;
+    }
+}
+
+
+// a) Display the value of element 6 of array f.
+System.out.println(f[6]);
+
+// b) Initialize each of the five elements of one-dimensional integer array g to 8.
+int[] g = new int[5];
+Arrays.fill(g, 8);
+
+// c) Total the 100 elements of floating-point array c.
+double[] c = new double[100];
+double total = 0.0;
+for (int i = 0; i < c.length; i++) {
+    total += c[i];
+}
+System.out.println(total);
+
+// d) Copy 11-element array a into the first portion of array b, which contains 34 elements.
+int[] a = new int[11];
+int[] b = new int[34];
+System.arraycopy(a, 0, b, 0, a.length);
+
+// e) Determine and display the smallest and largest values contained in 99-element floating-point array w.
+double[] w = new double[99];
+double smallest = Double.MAX_VALUE;
+double largest = Double.MIN_VALUE;
+for (int i = 0; i < w.length; i++) {
+    if (w[i] < smallest) {
+        smallest = w[i];
+    }
+    if (w[i] > largest) {
+        largest = w[i];
+    }
+}
+System.out.println("Smallest: " + smallest);
+System.out.println("Largest: " + largest);
+
+METHOD:A DEEPER LOOK
+1. What happens when a return type, even void, is specified for a constructor?
+2.Explain the notion of package access in Java. Explain the negative aspects of package access.
+3. Enumerations
+4. Composition
+5. Constructor and its Oveloading
+6. Static Class Members
+7. static Import
+8. final Instance Variables
+9. What is the difference between a local variable and a field?
+10. Explain the purpose of a method parameter. What is the difference between a parameter
+and an argument?
+11.What’s the purpose of keyword new? Explain what happens when you use it.
+12. What is a default constructor? How are an object’s instance variables
+initialized if a class has only a default constructor?
+13. Explain the purpose of an instance variable.
+14.Most classes need to be imported before they can be used in an application.
+    Why is every application allowed to use classes System and String without first importing them?
+15.Explain how a program could use class Scanner without importing it
+16.Explain why a class might provide a set method and a get method for an instance variable.
+17.Method Overloading
+
+18.has-a or composition.
+19.How does polymorphism promote extensibility?
+20. Compare and contrast abstract classes and interfaces. Why would you use an abstract class? Why would you use an interface?
+21. Discuss four ways in which you can assign superclass and subclass references to variables of
+  superclass and subclass types.
+22.What are abstract methods? Describe the circumstances in which an abstract method would be appropriate.
+23.How does polymorphism enable you to program “in the general” rather than “in the specific”? Discuss the key advantages of programming “in the general.
+
+               Exception Handling
+1.List five common examples of exceptions.
+2. Give several reasons why exception-handling techniques should not be used for conventional program control.
+3. Why are exceptions particularly appropriate for dealing with errors produced by methods
+of classes in the Java API?
+4. What is a “resource leak”?
+5. If no exceptions are thrown in a try block, where does control proceed to when the try block completes execution
+6. Give a key advantage of using catch( Exception exceptionName ).
+7 Should a conventional application catch Error objects? Explain.
+8 What happens if no catch handler matches the type of a thrown object?
+9 What happens if several catch blocks match the type of the thrown object?
+10 Why would a programmer specify a superclass type as the type in a catch block?
+11 What is the key reason for using finally blocks?
+12 What happens when a catch block throws an Exception?
+13 What does the statement throw exceptionReference do in a catch block?
+14 What happens to a local reference in a try block when that block throws an Exception?
+
+
+       ///Multithreading
+(Multithreading Terms) Define each of the following terms.
+a) thread
+b) multithreading
+c) runnable state
+d) timed waiting state
+e) preemptive scheduling
+f) Runnable interface
+g) notifyAll method
+h) producer/consumer relationship
+i) quantum
+
+(Multithreading Terms) Discuss each of the following terms in the context of Java’s threading mechanisms:
+a) synchronized
+b) producer
+c) consumer
+d) wait
+e) notify
+f) Lock
+g) Condition
+1.(Blocked State) List the reasons for entering the blocked state. For each of these, describe
+how the program will normally leave the blocked state and enter the runnable state.
+2.(Deadlock and Indefinite Postponement) Two problems that can occur in systems that allow threads to wait are deadlock, in which one or more threads will wait forever for an event that
+cannot occur, and indefinite postponement, in which one or more threads will be delayed for some
+unpredictably long time. Give an example of how each of these problems can occur in multithreaded Java programs
