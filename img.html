@@ -1,61 +1,113 @@
 <html>
-    <head>
-        <title>Image Swapper</title>
-        
-		<style>
-		
-      .parent {
-        position: relative;
-        top: 0;
-        left: 0;
-      }
-      .image1 {
-        position: relative;
-        top: 10;
-        left: 10;
-        border: 1px solid #000000;
-      }
-      .image2 {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        border: 1px solid #000000;
-      }
-	   .image3 {
-        position: absolute;
-        top: 50px;
-        left: 50px;
-        border: 1px solid #000000;
-      }
-	   .image4 {
-        position: absolute;
-        top: 70px;
-        left: 70px;
-        border: 1px solid #000000;
-      }
-	   .image5 {
-        position: absolute;
-        top: 90px;
-        left: 90px;
-        border: 1px solid #000000;
-      }
-		</style>
-		<script>
-            var counter=1;
-            function swapImage()
-            {
-              document.getElementById("pic1").disabled=false;
-			
+<head>
+    <title>Image Swapper</title>
+    
+    <style>
+        .parent {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .image1 {
+            position: relative;
+            top: 10;
+            left: 10;
+            border: 1px solid #000000;
+        }
+        .image2 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            border: 1px solid #000000;
+        }
+        .image3 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border: 1px solid #000000;
+        }
+        .image4 {
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            border: 1px solid #000000;
+        }
+        .image5 {
+            position: absolute;
+            top: 90px;
+            left: 90px;
+            border: 1px solid #000000;
+        }
+    </style>
+    <script>
+        var counter = 1;
+
+        function swapImage() {
+           
+            var img1 = document.getElementById("pic1");
+            var img2 = document.getElementById("pic2");
+            var img3 = document.getElementById("pic3");
+            var img4 = document.getElementById("pic4");
+            var img5 = document.getElementById("pic5");
+            
+			img1.disabled = true;
+            counter++;
+
+           
+            if (counter > 5) {
+                counter = 1;
             }
-        </script>
-    </head>
-    <body>
-	     <div class="parent">
-        <img class="image1" src="c1.png" id="pic1" onclick=" swapImage()"/>
-		 <img class="image2" src="c2.png" id="pic2" onclick="  swapImage()"/>
-		  <img class="image3" src="c3.png" id="pic3" onclick=" swapImage()"/>
-		   <img class="image4" src="c4.png" id="pic4" onclick="swapImage()"/>
-		    <img class="image5" src="c5.png" id="pic" onclick="swapImage()"/>
-			</div>
-    </body>
+			
+            switch (counter) {
+                case 1:
+                    img1.src = "c1.png";
+                    img2.src = "c2.png";
+                    img3.src = "c3.png";
+                    img4.src = "c4.png";
+                    img5.src = "c5.png";
+                    break;
+                case 2:
+                    img1.src = "c2.png";
+                    img2.src = "c3.png";
+                    img3.src = "c4.png";
+                    img4.src = "c5.png";
+                    img5.src = "c1.png";
+                    break;
+                case 3:
+                    img1.src = "c3.png";
+                    img2.src = "c4.png";
+                    img3.src = "c5.png";
+                    img4.src = "c1.png";
+                    img5.src = "c2.png";
+                    break;
+                case 4:
+                    img1.src = "c4.png";
+                    img2.src = "c5.png";
+                    img3.src = "c1.png";
+                    img4.src = "c2.png";
+                    img5.src = "c3.png";
+                    break;
+                case 5:
+                    img1.src = "c5.png";
+                    img2.src = "c1.png";
+                    img3.src = "c2.png";
+                    img4.src = "c3.png";
+                    img5.src = "c4.png";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <img class="image1" src="c1.png" id="pic1" onclick="swapImage()" />
+        <img class="image2" src="c2.png" id="pic2" onclick="swapImage()" />
+		<img class="image3" src="c3.png" id="pic3" onclick="swapImage()" />
+        <img class="image4" src="c4.png" id="pic4" onclick="swapImage()" />
+       <img class="image5" src="c5.png" id="pic5" onclick="swapImage()" />
+       </div>
+
+</body>
 </html>
