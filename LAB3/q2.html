@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <title>CA5314 : Full Stack Laboratory </title>
+     
+     <style>
+     #c1,#c2,#c3
+     {
+        background: green;
+     }
+     #c4,#c5
+     {
+        background-color:yellow;
+     }
+     #c6,#c7
+     {
+        background: red;
+
+     }
+     </style>
+  </head>
+ <body>
+    <script>
+        function changeColor()
+        {
+            const para1 = document.querySelector('h1');
+            const yearRegex = /(\d{4})/; // Regular expression to match the year (four digits)
+            const year = para1.textContent.match(yearRegex)[0];
+             const modifiedText = para1.textContent.replace(yearRegex, `<span style="color: ${getRandomColor()}">${year}</span>`);
+             para1.innerHTML = modifiedText;
+
+      
+        }
+        function getRandomColor() 
+        {
+         const letters = '0123456789ABCDEF';
+         let color = '#';
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+         }
+  return color;
+   }
+   function f1() {
+      var today = new Date();
+      var day = today.getDay();
+      var daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var dateTime = date + ' ' + time;
+      
+      var displayElement = document.getElementById("displayDateTime");
+      displayElement.innerHTML = dateTime + '     Day: ' + daylist[day];
+      displayElement.style.backgroundColor= getRandomColor();
+    }
+
+
+    
+
+    setInterval(f1, 1000);
+ 
+        setInterval(changeColor,3000);
+     </script>
+   <div class="wrapper">
+     <h1 id="h1">Code Challenge 2023</h1>
+     <h2 id="displayDateTime"></h2>
+     <h2>MCA Association</h2>
+    <ul>
+     <li id="c1">AI & Generative AI</li>
+     <li id="c2">CX & Digital Experience</li>
+     <li id="c3">Code Automation</li>
+     <li id="c4">Connected Product and Services</li>
+     <li id="c5">Data World and Cloud Computing</li>
+     <li id="c6">Quantum Computing</li>
+     <li id="c7">Robotics and Quality Engineering</li>
+
+   </ul>
+  </div>
+ </body>
+</html>
