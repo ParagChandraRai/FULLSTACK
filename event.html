@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body bgcolor="#ddd">
+    
+   <h3>Changing the  background Color</h3>
+   <h5> Click on a text s for changing its background color</h5>
+   <ul id="mylist">
+      <li>JAVASCRIPT</li>
+      <li>JAVA</li>
+      <li>REACT</li>
+      <li>NODEJS</li>
+      <li>MONGODB</li>
+   </ul>
+   <script>
+    const table = document.getElementById("mylist")
+ table.addEventListener("click", function(e){
+    console.log(e);
+    const target = e.target;
+
+    if (target)
+    {
+      e.target.style.backgroundColor = 'Brown';
+    }
+ });
+
+</script>
+   
+ </body>
+</html>
