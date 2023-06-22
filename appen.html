@@ -1,0 +1,19 @@
+<html>
+
+<body>
+<script>
+  function f1()
+  {
+    var parent=document.getElementById("a1");
+	
+	var textf=document.createElement("li");
+	const node=document.createTextNode("WATER");
+	textf.appendChild(node);
+	parent.appendChild(textf);
+  }
+</script>
+<div id="a1">
+<input type="button" onclick="f1()" value="click"></button>
+
+<body>
+</html>
